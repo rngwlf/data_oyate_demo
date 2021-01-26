@@ -32,11 +32,10 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
-      <button type="button" class="btn btn-dark">View Prompt</button>
-      <button type="button" class="btn btn-success">Submit Recording</button>
+      <button id="record" type="button" class="btn btn-dark">Record</button>
+      <button id="submit" type="button" class="btn btn-success">Submit Recording</button>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -52,6 +51,13 @@
 
     <script>
       console.log("I am Michael");
+
+      var counter = 0;
+      $("#record").click(function(){
+          console.log("submit :" + counter);
+          //counter = counter + 1;
+          counter ++;
+        });
 
 
     </script>
