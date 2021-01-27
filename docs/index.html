@@ -13,6 +13,8 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous">
     </script>
+
+    <script src="app.js"></script>
     
     <title>Hello, world!</title>
   </head>
@@ -21,7 +23,7 @@
     <form>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address:</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <div id="emailHelp" class="form-text">We will never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
@@ -65,7 +67,9 @@
         console.log("submit "+ submit_counter);
         submit_counter++;
 
+        // console.log email value
         $("#submit").prop("disabled", true);
+
       });
 
 
