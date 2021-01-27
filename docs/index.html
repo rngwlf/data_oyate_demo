@@ -27,12 +27,8 @@
           <div id="emailHelp" class="form-text">We will never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password:</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <label for="exampleInputPassword1" class="form-label">age:</label>
+          <input id="age" class="form-control" >
         </div>
       </form>
 
@@ -67,13 +63,21 @@
       var emailInput = $("#email"); // document.getElementById("email");
 
       $("#submit").click(function(){
+        var input = {};
+
         console.log("submit " + submitCounter);
         submitCounter++;
 
         // console.log email value
         console.log(emailInput.val());
-        submitButton.prop("disabled", true);
+        // makes {"email" : "value"}
+        input.email = emailInput.val();
+        input.age = $("#age").val();
+        // .... all the form parameters
 
+        console.log(input);
+
+        submitButton.prop("disabled", true);
       });
     </script>
   </body>
