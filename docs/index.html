@@ -62,17 +62,19 @@
           $("#submit").prop("disabled", false);
         });
       
-      var submit_counter = 0;
+      var submitCounter = 0;
+      var submitButton = $("#submit");
+      var emailInput = $("#email"); // document.getElementById("email");
+
       $("#submit").click(function(){
-        console.log("submit "+ submit_counter);
-        submit_counter++;
+        console.log("submit " + submitCounter);
+        submitCounter++;
 
         // console.log email value
-        $("#submit").prop("disabled", true);
+        console.log(emailInput.value);
+        submitButton.prop("disabled", true);
 
       });
-
-
     </script>
   </body>
 </html>
