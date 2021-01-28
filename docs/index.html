@@ -47,7 +47,7 @@
     </div>
     <div id="buttons">
       <button id="record" type="button" class="record btn btn-dark">Record</button>
-      <button id="record" type="button" class="stop btn btn-dark">Stop</button>
+      <button id="stop" type="button" class="stop btn btn-dark">Stop</button>
       <button id="submit" type="button" class="btn btn-success" disabled="true">Submit Recording</button>
     </div>
 
@@ -71,15 +71,27 @@
           console.log("record :" + counter);
           //counter = counter + 1;
           counter ++;
-          $("#submit").prop("disabled", false);
+          $("#submit").prop("disabled", true);
         });
       
+      $("#stop").click(function(){
+
+        // enable submit
+        $("#submit").prop("disabled", false);
+      });
+
       var submitCounter = 0;
       var submitButton = $("#submit");
       var emailInput = $("#email"); // document.getElementById("email");
 
+      /******
+       * 
+       * */
       $("#submit").click(function(){
         var input = {};
+
+        var d = new Date();
+
 
         console.log("submit " + submitCounter);
         submitCounter++;
@@ -89,6 +101,7 @@
         // makes {"email" : "value"}
         input.email = emailInput.val();
         input.age = $("#age").val();
+        input.timestamp = d.toUTCString();
         // .... all the form parameters
 
         console.log(input);
